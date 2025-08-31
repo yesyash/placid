@@ -1,5 +1,6 @@
 import js from '@eslint/js'
 import tsParser from '@typescript-eslint/parser'
+import { ESLint } from 'eslint'
 import { importX } from 'eslint-plugin-import-x'
 import pluginReact from 'eslint-plugin-react'
 import { defineConfig } from 'eslint/config'
@@ -20,7 +21,7 @@ export default defineConfig([
   },
   {
     plugins: {
-      'import-x': importX,
+      'import-x': importX as unknown as ESLint.Plugin,
     },
     extends: ['import-x/flat/recommended'],
     rules: {
@@ -52,6 +53,11 @@ export default defineConfig([
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
 ])
