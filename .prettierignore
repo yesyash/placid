@@ -1,0 +1,8 @@
+"node_modules"
+"**/dist/**"
+"**/build/**"
+"**/public/**"
+"**/assets/**"
+src-tauri/**
+pnpm-lock.yaml
+routeTree.gen.ts
